@@ -24,24 +24,23 @@ function handleSubmit(ev) {
     setTimeout(() => {
       new Promise((resolve, reject) => {
           if (stateValue === "fulfilled") {
-          resolve(`✅ Fulfilled promise in ${delayValue}ms`)
+          resolve(delayValue)
             
           } else {
-              reject(`❌ Rejected promise in ${delayValue}ms`
-)
+              reject(delayValue)
         }
       })
-            .then((data) => {
+            .then((delay) => {
             iziToast.show({
-                message: data,
+                message: `✅ Fulfilled promise in ${delay}ms`,
                 color: "green",
                 position: "topRight"
 });
             
         })
-          .catch((error) => {
+          .catch((delay) => {
               iziToast.show({
-                  message: error,
+                  message: `❌ Rejected promise in ${delay}ms`,
                   color: "red",
                   position: "topRight"
               });

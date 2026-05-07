@@ -67,6 +67,13 @@ dateTime.disabled = true
     
     if (deltaTime <= 0) {
       clearInterval(intervalId)
+
+      createMarkap({
+        days: '00',
+        hours: '00',
+        minutes: '00',
+        seconds: '00',
+      })
       dateTime.disabled = false;
       return
     }
